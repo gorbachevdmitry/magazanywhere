@@ -14,12 +14,14 @@ import sys
 path = '/home/dmitrygorbachev/magazanywhere/magazin'  # use your own PythonAnywhere username here
 if path not in sys.path:
     sys.path.append(path)
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "magazin.settings")
-
-
-
 from django.core.wsgi import get_wsgi_application
+
+os.environ["SECRET_KEY"] = "d5+*iszxz-rel-1td0rz8*(bjj2&j!==i*)d0pp69au^x23v)&"
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "magazin.deploy_settings")
+
+
+
+
 from whitenoise.django import DjangoWhiteNoise
 
 
